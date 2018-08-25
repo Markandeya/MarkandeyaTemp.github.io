@@ -1,0 +1,32 @@
+#######################
+# CONFIGURATION       #
+#######################
+
+#--------------#
+# Settings     # 
+#--------------#
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "127.0.0.1:4000" # the base hostname & protocol for your site, e.g. http://example.com
+permalink: pretty #prettyfy your urls
+markdown: kramdown
+theme: minima
+
+sass:
+    sass_dir: _sass # Add Sass _includes in _sass and compile in css/main.css (--- Done by yaml ---)
+
+
+# Files to ignore
+exclude: ['README.md', '_site/', '.sass-cache/', '.jekyll-cache/', '.jekyll-metadata']
+
+#--------------#
+# Global data  # 
+#--------------#
+
+title: Vasudev R. Nair
+email: vasalpha@gmail.com
+github_username: Markandeya
+linkedin_url: vasudev-r-nair-498651146
+hackerrank_username: vasudevnair
+stackoverflow_username: 6056258/markandeya
+baseurl: ""

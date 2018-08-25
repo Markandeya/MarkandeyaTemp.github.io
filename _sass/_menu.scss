@@ -1,0 +1,164 @@
+// Hamburger button
+
+.menu-btn {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    z-index: 3;
+    cursor: pointer;
+    @include easeOut;
+    
+    &:hover {
+        .btn-line {
+            background: $tertiary-color;
+        }
+    }
+
+    .btn-line {
+        height: 3px;
+        width: 28px;
+        margin: 0 0 5px 0;
+        background-color: set-color($primary-color);
+        @include easeOut;
+    }
+
+    &.close {
+
+        .btn-line {
+
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+}
+
+// Nav on active hamburger
+
+.menu {
+    position: fixed;
+    top:0px;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+
+    &.show {
+        visibility: visible;
+    }
+
+    &-branding, &-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        width: 50%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    // Right hand side
+
+    &-nav {
+        margin: 0;
+        padding: 0;
+        background: rgba(darken($primary-color, 10), 0.9);
+        list-style: none;
+        transform: translate3d(0, -100%, 0); //-100% takes it off the page using y-axis
+        @include easeOut;
+        
+        .character {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            height: 4.5rem;
+            width: 4.5rem;
+            max-height: 120px;
+            max-width: 120px;
+            background: url('../img/carrot.png');
+            background-size: cover;
+            transform: translate3d(110vw, 110vh, 0);
+            &.show {
+                transition-delay: 0.8s;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        &.show {
+            transform: translate3d(0, 0, 0); //slide in from top
+        }
+    }
+    
+    .nav-item {
+        transform: translate3d(600px, 0, 0);
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.current > a{
+            color: $secondary-color;
+            border-bottom: 3px solid $secondary-color;
+        }
+    }
+
+    // Add individual transition delays
+
+    @for $x from 1 through 4 {
+        .nav-item:nth-child(#{$x}) {
+            transition-delay: $x * 0.1s;
+        }
+    }
+
+    .nav-link {
+        position: relative;
+        display: inline-block;
+        font-size: 30px;
+        text-transform: uppercase;
+        font-weight: 300;
+        padding: 1rem 0;
+        color: $text-color;
+        text-decoration: none;
+        @include easeOut;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    // Left hand side
+    &-branding {
+        background: rgba(lighten($secondary-color, 10), 0.9);
+        list-style: none;
+        transform: translate3d(0, 100%, 0); //-100% takes it off the page using y-axis
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0); //slide in from bottom
+        }
+
+        .profile {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: solid 3px darken($primary-color, 10);
+            background: $profile-url;
+            background-size: cover;
+            @include easeOut;
+
+            &:hover {
+                border: solid 3px lighten($tertiary-color, 10);
+                cursor: pointer;            
+            }
+        }
+    }
+}
