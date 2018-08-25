@@ -7,7 +7,7 @@
 #--------------#
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "127.0.0.1:4000" # the base hostname & protocol for your site, e.g. http://example.com
+url: "vasudevnair.me" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: pretty #prettyfy your urls
 markdown: kramdown
 theme: minima
