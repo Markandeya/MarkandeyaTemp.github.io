@@ -7,7 +7,7 @@
 #--------------#
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "vasudevnair.me" # the base hostname & protocol for your site, e.g. http://example.com
+url: "markandeya.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: pretty #prettyfy your urls
 markdown: kramdown
 theme: minima
